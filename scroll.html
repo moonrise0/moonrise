@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scrollTo</title>
+    <style>
+      body {
+        width: 5000px;
+        height: 5000px;
+        background: linear-gradient(blue, black);
+      }
+      div {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button onclick="sTo()">scrollTo({top:4000, behavior:'smooth'})</button>
+      <button onclick="sBy()">scrollBy({top:500, behavior:'smooth'}</button>
+    </div>
+    <script>
+      function sTo() {
+        window.scrollTo(100, 200); //x좌표,y좌표
+        //window scrollTo{left :100 , top :200};
+      }
+      function sBy() {
+        window.scrollBy(100, 200); //x좌표, y좌표
+        //window.scrollBy{left: 100, top:200 };
+      }
+    </script>
+  </body>
+</html>
