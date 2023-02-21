@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bodystyle.css" />
+    <script src="jquery.js"></script>
+  </head>
+  <script>
+    $(function () {
+      $(".btn").on("mouseover", function () {
+        alert("수정할 권한이 없습니다.");
+      });
+      $(document).on("mouseover", ".btn_2", function () {
+        alert("welcome!");
+      });
+
+
+
+
+      $(".title").hover(function(){
+      $(this).css("background-color","#98FB98");
+      },function(){ 
+        if ($(this).attr('id')==="title1"){
+      
+          $(this).css("background-color"," #e6e6e6");
+        } else{
+        $(this).css("background-color","white");}})
+     
+        $(".box").hide();
+    
+        $(".re").on("click", function () {
+          $(".box").fadeOut(1000, "swing", function () {
+           
+          });
+          // $(".box").slideUp(1000, "linear", function () {
+        
+          // });
+          });
+        //클릭하면 box가 숨겨지고, 콜백 함수 실행되어서 fade in버튼 생성
+        $(".re").on("click", function () {
+          $(".box").fadeIn(1000, "swing", function () {
+          
+          })
+          });
+    
+          $(".btn1").on("click", function () {
+          $(".box").fadeOut(1000, "swing", function () {
+          
+          })
+          });   
+          
+            let addContents = 
+          `<div id="readyone">
+            <div class="num"> <i=1, i+1;> </div>
+            <div class="title"><a class="re"><b><u>새로운내용.</u></b></a></div>
+            <div class="name">테스트</div>
+            <div class="date">05-01</div>
+            <div class="count">0</div>
+          </div>`
+
+          
+          $(".bttn").on("click", function () {
+            $("#readyone").before(addContents)
+               
+          });   
+    });
+    
+        //요소 선택.효과메서드(효과 소요시간, 가속도, 콜백함수-끝난 후 실행할 함수(생략가능))
+
+
+  </script>
+
+
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <h1>사내게시판</h1>
+      </div>
+      <div class="card-body">
+        <div class="top">
+          <div class="num">번호</div>
+          <div class="title" id="title1">제목</div>
+          <div class="name">작성자</div>
+          <div class="date">작성일</div>
+          <div class="count">조회</div>
+        </div>
+
+        <div id="readyone">
+          <div class="num">5</div>
+          <div class="title"><a class="re"><b><u><공지사항> 클릭해보세요.</u></b></a></div>
+          <div class="name">테스트</div>
+          <div class="date">05-01</div>
+          <div class="count">12</div>
+        </div>
+
+        <div>
+          <div class="num">4</div>
+          <div class="title" > <strike>글이 삭제되었습니다.</strike></div>
+          <div class="name">운영자</div>
+          <div class="date">05-01</div>
+          <div class="count">18</div>
+        </div>
+
+        <div>
+          <div class="num">3</div>
+          <div class="title">문의드립니다.</div>
+          <div class="name">테스트</div>
+          <div class="date">04-30</div>
+          <div class="count">14</div>
+        </div>
+        <div>
+          <div class="num">2</div>
+          <div class="title">딸기 농사</div>
+          <div class="name">테스트</div>
+          <div class="date">04-27</div>
+          <div class="count">7</div>
+        </div>
+        <div>
+          <div class="num">1</div>
+          <div class="title">칭찬합니다</div>
+          <div class="name">테스트</div>
+          <div class="date">01-27</div>
+          <div class="count">2</div>
+        </div>
+        <ul class="number">
+          <li><a href="#">&lt;</a></li>
+          <li><a href="#" class="active">1</a></li>
+
+          <li><a href="#">&gt;</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <button class="btn"><a>수정하기</a></button>
+        
+        <button class="bttn"><a>글쓰기</a></button>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="검색어를 입력하세요">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" size="30%">
+      </div>
+
+ 
+    </div>
+
+    <div class="box">
+      <div class="content" >
+       <br><b>안녕하세요 게시판 운영자입니다.</b></br></dr>
+       사내게시판이 1주일 뒤 운영을 종료합니다.</br></br>
+       그동안 이용해주셔서 감사합니다.</br></br>
+      <button class="btn1" >창닫기</button>
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+<!-- // $(document).ready(function(){
+  //    $('card-body').mouseover(function(){
+  //       $(this).css("backgroundColor","#ccc");
+  //    });
+  //    $('card-body').mouseout(function(){
+  //       $(this).css("backgroundColor","#fff");
+  //    });
+  // });
+  
+  
+     
+  // var btn_2 = $('<p><button class="btn_2">버튼2</button></p>');
+  //       $("#wrap").append(btn_2);
+  
+  //       $(".del_1").on("click", function () {
+  //         $(".btn_1").off("mouseover");
+  //       });
+  //       $(".del_2").on("click", function () {
+  //         $(document).off("mouseover", ".btn_2");
+  //       }); -->
+  
+
+
+       <!-- <button>1. 버튼</button>
+            <a href = "">2. 버튼</a>
+            <input type = "button" value = "3. 버튼">
+            <input type = "submit" name = "" id = "" value = "4. 버튼"> -->
